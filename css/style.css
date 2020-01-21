@@ -1,0 +1,16 @@
+.response{
+}
+.response__element{
+    width: 100%;
+    padding: 20px;
+    border-bottom: 2px solid #777;
+}
+
+.element__header{
+    font-size: 25px;
+    
+
+}
+.element__body{
+
+}
