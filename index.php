@@ -1,4 +1,3 @@
-
 <head>
     <title>Templates</title>
 
@@ -13,10 +12,17 @@
     <form class = "form input-form w-75 mx-auto my-3 card bg-light" >
         <h1 class = "h2 text-center m-3" >Templates</h1>
         <input type="text" class ="search-string form-control w-75 p-3 m-3 mx-auto" required placeholder="Search" name="search" id = "search" />
-        <input type="submit" class = "btn submit btn-primary w-25 p-2 m-3 mx-auto" value = "Search" />
+        <div class = "form__button-set" >
+            <input type="submit" class = "btn submit btn-primary w-25 p-2 m-3 mx-auto" value = "Search" />
+            <a class = "btn submit btn-primary w-25 p-2 m-3 mx-auto" href = "add.php"  >Add</a>
+        </div>
     </form>
-    <div class = "response w-75 mx-auto my-3 card bg-light" >
-        <h2 class = "response__title h2 text-center m-3" >Answers</h2>
-        
+    <div class = "response w-75 mx-auto my-3 card bg-light" >     
+        <div class="response__element">
+            <div class="element__header">Nothing</div>
+            <div class="element__body">
+                There is absolutely nothing
+            </div>
+        </div>
     </div>
-</div>    
+</div>

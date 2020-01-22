@@ -1,16 +1,31 @@
-.response{
-}
 .response__element{
     width: 100%;
     padding: 20px;
-    border-bottom: 2px solid #777;
+    padding-right: 70px;
+    border-bottom: 1px solid #aaa;
 }
 
 .element__header{
     font-size: 25px;
-    
-
 }
-.element__body{
 
+.form__button-set{
+    text-align: center;
+    color: #fff;
+}
+
+.form-textarea{
+    height: 400px !important;
+}
+
+.spinner{
+    width: 20%;
+    margin: 30px auto;
+    object-fit: cover;
+}
+
+.edit-btn{
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
