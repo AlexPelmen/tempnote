@@ -1,4 +1,5 @@
 .response__element{
+    position: relative;
     width: 100%;
     padding: 20px;
     padding-right: 70px;
@@ -28,4 +29,12 @@
     position: absolute;
     right: 10px;
     top: 10px;
+}
+
+.btn{
+    transition: 0.3s;
+}
+.btn:hover{
+    transform: scale( 1.1 );
+    cursor: pointer;
 }

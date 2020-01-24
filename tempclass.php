@@ -1,4 +1,5 @@
 <?php
+    require_once __DIR__ . "/config.php";
     const HEADER_SCORE = 40;
     const BODY_SCORE = 20;
 
@@ -52,12 +53,27 @@
                 $result []= $row;
             
             exit( json_encode( $result ) );
-            
             return $result;
         } 
         public function add_template( $title, $text ){
             if( empty( $title ) || empty( $text ) )
                 return false;
             return $this->db->query( "INSERT INTO `data` (`title`, `text`) VALUES ('$title', '$text')" );
+        }
+        public function get_by_id( $id ){
+            if( ! $id ) return false;
+            $query = "SELECT * FROM `data` WHERE id = $id";
+            $res = $this->db->query( $query );                           
+            return mysqli_fetch_array( $res );
+        }
+        public function update_template( $id, $title, $text ){
+            if( !( $id && $title && $text ) ) return false;
+            $query = "UPDATE `data` SET `title` = '$title', `text` = '$text' WHERE `data`.`id` = $id";                     
+            return $this->db->query( $query ); 
+        }
+        public function delete_template( $id ){
+            if( !$id ) return false;
+            $query = "DELETE FROM `data` WHERE `data`.`id` = $id";                     
+            return $this->db->query( $query ); 
         }
     }

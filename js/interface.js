@@ -41,11 +41,11 @@ function update( search_string ){
                     return;
                 }
                 data.forEach(( el )=>{
-                    create_element( el.title, el.text );
+                    create_element( el.id, el.title, el.text );
                 });
             }
             else
-                create_element( "Nothing", "There is absolutely nothing" );
+                create_element( 0, "Nothing", "There is absolutely nothing" );
         },
         dataType: 'json',
         error: function ( msg ) {
@@ -56,17 +56,27 @@ function update( search_string ){
 
 
 //create one element as the response entry 
-function create_element( title, text ){
-    $wrapper = $( "<div>", {class: "response__element"} );
+function create_element( id, title, text ){
+    $wrapper = $( "<form>", {
+        class: "response__element", 
+        action: "edit.php", 
+        method: "POST" } 
+    )
     $title = $( "<div>", {class: "element__header"} );
     $title.html( title );
     $text = $( "<div>", {class: "element__body"} );
     $text.html( text );
-    $edit = $( "<div>", {
+    
+    $edit = $( "<input>", {
         class: "edit-btn btn btn-secondary",
-    }).html( "Edit" );
-    $text.append( $edit );
+        type: "submit",
+        value: "Edit" 
+    })
+    $hidden_id = $( "<input>", { type: "hidden", value: id, name: "id" })
 
+    $wrapper.attr("id", id);
+    $wrapper.append( $hidden_id );
+    $wrapper.append( $edit );
     $wrapper.append( $title );
     $wrapper.append( $text );
     $response.append( $wrapper );
