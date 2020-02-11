@@ -20,9 +20,7 @@
     <div class = "response w-75 mx-auto my-3 card bg-light" >     
         <div class="response__element">
             <div class="element__header">Nothing</div>
-            <div class="element__body">
-                There is absolutely nothing
-            </div>
+            <div class="element__body">There is absolutely nothing</div>
         </div>
     </div>
 </div>

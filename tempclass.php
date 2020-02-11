@@ -54,7 +54,7 @@
             while( $row = mysqli_fetch_array( $res ) )
                 $result []= $row;
             
-            exit( json_encode( $result ) );
+            exit( json_encode( $result, JSON_PRETTY_PRINT ) );
             return $result;
         } 
         public function add_template( $title, $text ){

@@ -3,11 +3,15 @@
     width: 100%;
     padding: 20px;
     padding-right: 70px;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;   
 }
 
 .element__header{
     font-size: 25px;
+}
+
+.element__body{
+    white-space: pre-wrap;
 }
 
 .form__button-set{
