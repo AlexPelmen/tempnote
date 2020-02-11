@@ -1,6 +1,6 @@
 <head>
     <title>Templates</title>
-
+    <meta charset="utf-8">
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css"/>
     <script  src="js/jquery.js" ></script>
     <script  src="bootstrap/bootstrap.min.js" ></script>

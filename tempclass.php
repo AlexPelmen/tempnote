@@ -12,6 +12,7 @@
         }
         public function connect_db(){
             $this->db = mysqli_connect( HOST, LOGIN, PASSWORD, DATABASE );
+            $this->db->query( "SET NAMES 'utf8'" );
         }
         public function search( $text ){
 
@@ -59,7 +60,8 @@
         public function add_template( $title, $text ){
             if( empty( $title ) || empty( $text ) )
                 return false;
-            return $this->db->query( "INSERT INTO `data` (`title`, `text`) VALUES ('$title', '$text')" );
+            file_put_contents( "log.txt" , "INSERT INTO `data` (`title`, `text`) VALUES ( '$title', '$text' )" );
+            return $this->db->query( "INSERT INTO `data` (`title`, `text`) VALUES ( '$title', '$text' )" );
         }
         public function get_by_id( $id ){
             if( ! $id ) return false;
