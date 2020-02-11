@@ -44,7 +44,8 @@
                 HAVING 
                     `relevant` > 0
                 ORDER BY
-                    `relevant` DESC";
+                    `relevant` DESC
+                LIMIT 20";
             $res = $this->db->query( $query );
 
             //having result. Get it to the array
